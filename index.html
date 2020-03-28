@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<script src="CommonDictionary.js"></script>
+	<script src="Dictionary.js"></script>
+
+	<script src="passwordGen.js"></script>
+
+	<title>Password Generator</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- Custom styles for this template -->
+	<link href="signin.css" rel="stylesheet">
+</head>
+
+<!-- inStyle = "wwswiii", wordCase = WordCaseENUM.Random, passwordCount = 0) -->
+
+<body class="text-center">
+	<div class="row">
+		<div class ="col-sm">
+			<form class="form-signin">
+				<h1 class="h3 mb-3 font-weight-normal">Password Generator</h1>
+
+				<div class="input-group imput-group-sm">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text">Password Style</span>
+				  </div>
+				  <input type="text" name="passStyle" id="passStyle" class="form-control" value="w~w~wssiii" required>
+				  <div class="input-group-prepend">
+				    <span class="input-group-text small"style="font-size: xx-small;">w = word, s = symbol, i = integer, ~ = '_', @ = custom word</span>
+				  </div>
+				</div>
+				<hr>
+				<div class="input-group imput-group-sm">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text">Custom Word</span>
+				  </div>
+				  <input type="integer" name="customWord" id="customWord" class="form-control" value="">
+				</div>
+				<hr>
+				<div class="input-group imput-group-sm">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text">Special Characters</span>
+				  </div>
+				  <input type="integer" name="specialCharacters" id="specialCharacters" class="form-control" value="!#$%&'()*+,-./:;<=>?@[]^`{|}" required>
+				</div>
+				<hr>
+				<select id="wordCase" class="custom-select">
+				  <option value="Random" selected>Randomcase</option>
+				  <option value="Uppercase">Uppercase</option>
+				  <option value="Lowercase">Lowercase</option>
+				  <option value="Camelcase">Camelcase</option>
+				  <option value="RandomLetterCase">RandomLetterCase</option>
+				</select>
+				<hr>
+				<select id="wordDictionary" class="custom-select">
+				  <option value="CommonDictionary" selected>Common Word Dictionary</option>
+				  <option value="Dictionary">Every Word Dictionary</option>
+				</select>
+				<hr>
+				<div class="input-group imput-group-sm">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text">Password Count</span>
+				  </div>
+				  <input type="integer" name="passwordCount" id="passwordCount" class="form-control" value="15" required>
+				</div>
+				<hr>
+				<div class="input-group imput-group-sm">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text">Max Word Size</span>
+				  </div>
+				  <input type="integer" name="wordSize" id="wordSize" class="form-control" value="20" required>
+				</div>
+				<hr>
+
+			  <button class="btn btn-lg btn-primary btn-block" id="GeneratePasswords" type="button" onclick="generatePasswordsWithData()">Generate!!</button>
+			</form>
+			<hr>
+			<h4>Exportable Settings:</h4>
+			<div class="input-group imput-group-sm">
+			  <div class="input-group-prepend">
+			    <button type="button" class="btn btn-warning" id="IMPORTSettings" class="input-group-text" onclick="importSettings()">IMPORT Settings</span>
+			  </div>
+			  <input type="text" name="NewSettings" id="newSettings" class="form-control red" value="" style="font-size: 10pt; color: red;">
+			</div>
+		</div>
+		<div class="col-sm">
+			<h2>Your New Password List:</h2>
+			<p id="OUTPUT"></p>
+		</div>
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">generatePasswordsWithData();</script>
