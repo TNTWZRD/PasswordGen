@@ -8,6 +8,11 @@
 
 	<title>Password Generator</title>
 
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="PaassWORD Generator">
+  <meta name="author" content="Daniel Jajliardo, TNTWZRD">
+
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -17,7 +22,27 @@
 
 <!-- inStyle = "wwswiii", wordCase = WordCaseENUM.Random, passwordCount = 0) -->
 
-<body class="text-center">
+<body class="text-center d-flex flex-column h-100">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="/">TNTWZRDS Password Generator</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+				<a class="nav-link" href="https://github.com/tntwzrd/passwordgen" target="_BLANK" >Project On Github</a>
+      </li>
+      <li class="nav-item">
+				<span class="nav-link nav-link-right">&copy;2020 <a href="https:/github.com/tntwzrd" target="_BLANK">TNTWZRD</a> @ TheTechSphere</span>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div roll="main" class="container" id="MainBody">
 	<div class="row">
 		<div class ="col-sm">
 			<form class="form-signin">
@@ -81,7 +106,7 @@
 			<h4>Exportable Settings:</h4>
 			<div class="input-group imput-group-sm">
 			  <div class="input-group-prepend">
-			    <button type="button" class="btn btn-warning" id="IMPORTSettings" class="input-group-text" onclick="importSettings()">IMPORT Settings</span>
+			    <button type="button" class="btn btn-warning" id="IMPORTSettings" class="input-group-text" onclick="importSettings()">IMPORT Settings</button>
 			  </div>
 			  <input type="text" name="NewSettings" id="newSettings" class="form-control red" value="" style="font-size: 10pt; color: red;">
 			</div>
@@ -91,7 +116,11 @@
 			<p id="OUTPUT"></p>
 		</div>
 	</div>
+</div>
+
 </body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
 </html>
 
 <script type="text/javascript">generatePasswordsWithData();</script>
