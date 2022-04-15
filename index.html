@@ -3,6 +3,7 @@
 <head>
 	<script src="CommonDictionary.js"></script>
 	<script src="Dictionary.js"></script>
+	<script src="presets.js"></script>
 
 	<script src="passwordGen.js"></script>
 
@@ -19,8 +20,6 @@
 	<!-- Custom styles for this template -->
 	<link href="signin.css" rel="stylesheet">
 </head>
-
-<!-- inStyle = "wwswiii", wordCase = WordCaseENUM.Random, passwordCount = 0) -->
 
 <body class="text-center d-flex flex-column h-100">
 
@@ -46,7 +45,49 @@
 	<div class="row">
 		<div class ="col-sm">
 			<form class="form-signin">
-				<h1 class="h3 mb-3 font-weight-normal">Password Generator</h1>
+				<h1 class="h3 mb-3 font-weight-normal">
+					Password Generator
+				
+					<div class="btn-group">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+						  Presets
+						</button>
+						<div class="dropdown-menu">
+							<h5>Developer Presets</h5>
+							<a class="dropdown-item" href="?Preset=Defualt">
+								<button class="btn btn-outline-secondary" style="width: 125px;" type="button">Defualt</button>
+							</a>
+							<a class="dropdown-item" href="?Preset=devFavorite">
+								<button class="btn btn-outline-secondary" style="width: 125px;" type="button">Dev's Favorite</button>
+							</a>
+
+							<div class="dropdown-divider"></div>
+							<h5>Custom Presets</h5>
+							<div class="input-group">
+								<div class="dropdown-item imput-group-sm">
+									<button class="btn btn-outline-secondary" style="width: 125px;" type="button" id="customPreset01Button" onclick="loadSaveSlot(0)">[EMPTY SLOT]</button>
+									<button class="btn btn-outline-secondary" type="button" id="customPreset01Menu" onclick="createSaveMenu(0)">|||</button>
+								</div>
+								<div class="dropdown-item imput-group-sm">
+									<button class="btn btn-outline-secondary" style="width: 125px;" type="button" id="customPreset02Button" onclick="loadSaveSlot(1)">[EMPTY SLOT]</button>
+									<button class="btn btn-outline-secondary" type="button" id="customPreset02Menu" onclick="createSaveMenu(1)">|||</button>
+								</div>
+								<div class="dropdown-item imput-group-sm">
+									<button class="btn btn-outline-secondary" style="width: 125px;" type="button" id="customPreset03Button" onclick="loadSaveSlot(2)">[EMPTY SLOT]</button>
+									<button class="btn btn-outline-secondary" type="button" id="customPreset03Menu" onclick="createSaveMenu(2)">|||</button>
+								</div>
+								<div class="dropdown-item imput-group-sm">
+									<button class="btn btn-outline-secondary" style="width: 125px;" type="button" id="customPreset04Button" onclick="loadSaveSlot(3)">[EMPTY SLOT]</button>
+									<button class="btn btn-outline-secondary" type="button" id="customPreset04Menu" onclick="createSaveMenu(3)">|||</button>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+
+				</h1>
+
+				
 
 				<div class="input-group imput-group-sm">
 				  <div class="input-group-prepend">
@@ -69,7 +110,7 @@
 				  <div class="input-group-prepend">
 				    <span class="input-group-text">Special Characters</span>
 				  </div>
-				  <input type="integer" name="specialCharacters" id="specialCharacters" class="form-control" value="!#$%&'()*+,-./:;<=>?@[]^`{|}" required>
+				  <input type="integer" name="specialCharacters" id="specialCharacters" class="form-control" value="!#$%&'()*+,-./:<=>?@[]^`{|}" required>
 				</div>
 				<hr>
 				<select id="wordCase" class="custom-select">
@@ -100,7 +141,7 @@
 				</div>
 				<hr>
 
-			  <button class="btn btn-lg btn-primary btn-block" id="GeneratePasswords" type="button" onclick="generatePasswordsWithData()">Generate!!</button>
+			  <button class="btn btn-lg btn-primary btn-block" id="GeneratePasswords" type="button" onclick="generatePasswordsWithData(true)">Generate!!</button>
 			</form>
 			<hr>
 			<h4>Exportable Settings:</h4>
@@ -110,8 +151,12 @@
 			  </div>
 			  <input type="text" name="NewSettings" id="newSettings" class="form-control red" value="" style="font-size: 10pt; color: red;">
 			</div>
+			<a href="" id="apiCall">API CALL</a>
 		</div>
 		<div class="col-sm">
+
+			<span id="saveSlotMenu"></span>
+
 			<h2>Your New Password List:</h2>
 			<p id="OUTPUT"></p>
 		</div>
@@ -121,6 +166,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@popperjs/core@2" ></script>
 </html>
 
 <script type="text/javascript">generatePasswordsWithData();</script>

@@ -1,0 +1,20 @@
+const PRESETS = {
+    "Defualt":{
+        "passStyle":"w~w~wssiii",
+        "wordCase":"Random",
+        "passwordCount":10,
+        "wordDictionary":"CommonDictionary",
+        "wordSize":"20",
+        "specialCharacters":"!#$%&'()*+,-./:<=>?@[]^`{|}",
+        "customWord":""
+    },
+    "devFavorite":{
+        "passStyle":"www~@sii",
+        "wordCase":"Camelcase",
+        "passwordCount":10,
+        "wordDictionary":"CommonDictionary",
+        "wordSize":"4",
+        "specialCharacters":"*",
+        "customWord":"Netflix"
+    }
+}
